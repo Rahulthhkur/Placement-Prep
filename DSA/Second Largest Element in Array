@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+#include <algorithm> 
+
+int findSecondLargest(int n, vector<int> &arr) {
+
+//At the very first we sort the array
+sort(arr.begin(), arr.end());
+
+int largest = arr[n-1]; //Then we initalize the largest to the last of the array    
+
+//After that we will loop and comapre the second largest element to the largest one
+    for(int i=n-2 ; i>=0; i-- ){
+        if(arr[i]!= largest ){
+            return arr[i];
+        }
+    }
+    return -1;
+}
