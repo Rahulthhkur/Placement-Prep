@@ -1,0 +1,15 @@
+vector<int> rotateArray(vector<int>arr, int k) {
+    int n = arr.size();
+
+    k = k % n ; //for handling the cases if k is greater then size of array
+
+    //First we sort the array in reverse
+    reverse(arr.begin(), arr.end());
+
+    //Then we reverse the (n-k) elements
+    reverse (arr.begin(), arr.begin()+(n-k));
+
+    //Then we revese the remaining array
+    reverse(arr.begin()+(n-k), arr.end());
+    return arr;
+}
